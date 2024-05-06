@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class practice {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		System.setProperty("Webdriver.chrome.driver", "./Driver.chromedriver.exe");
@@ -18,46 +18,20 @@ public class practice {
 		
 		driver.manage().window().maximize();
 		
-		driver.get("https://www.google.com");
+		driver.get("https://www.leafground.com/alert.xhtml");
 		
-		WebElement element = driver.findElement(By.name("q"));
-		element.sendKeys("amazon india");
-		element.submit();
-		driver.findElement(Bycssslector("div[class='CCgQ5 vCa9Yd QfkTvb N8QANc Va3FIb EE3Upf'] span")).click();
-	
+		WebElement element = driver.findElement(By.id("j_idt88:j_idt104"));
+		element.click();
 		
+		Thread.sleep(2000);
 		
-		
-		
+		driver.switchTo().alert().sendKeys("Hi");
+		driver.switchTo().alert().accept();
 		
 		
 		
 		
-	}
-
-	private static By Bycssslector(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private static By Byrelativexpath(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private static By BypartialLinkText(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private static By Byclass(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private static By ByLinkText(String string) {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }
