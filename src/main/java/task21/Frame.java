@@ -1,5 +1,6 @@
 package task21;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -17,14 +18,14 @@ public class Frame {
 		driver.manage().window().maximize();	
 		driver.get("https://the-internet.herokuapp.com/iframe"); 
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		WebElement iframe = driver.findElement(By.xpath("//*[@id=\"mce_0_ifr\"]"));
 		driver.switchTo().frame(iframe);
 		
 		driver.findElement(By.xpath("//body[@id='tinymce']/p")).sendKeys("Hello People"); 
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		driver.close();
 	}

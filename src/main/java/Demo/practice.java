@@ -12,26 +12,20 @@ public class practice {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("Webdriver.chrome.driver", "./Driver.chromedriver.exe");
-		
+		System.setProperty("Webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();	
+		driver.get("https://practicetestautomation.com/practice-test-login/"); 
 		
-		driver.manage().window().maximize();
+	    Thread.sleep(3000);
 		
-		driver.get("https://www.leafground.com/alert.xhtml");
+		driver.findElement(By.xpath("//*[@id='form']/div[1]/input[1]")).sendKeys("student");
 		
-		WebElement element = driver.findElement(By.id("j_idt88:j_idt104"));
-		element.click();
+		driver.findElement(By.id("password")).sendKeys("Password123");
 		
-		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='submit']")).click();
 		
-		driver.switchTo().alert().sendKeys("Hi");
-		driver.switchTo().alert().accept();
-		
-		
-		
-		
-		
+		driver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[2]/div/div/div/a")).click();
 	}
 
 }
