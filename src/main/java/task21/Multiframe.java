@@ -1,8 +1,6 @@
 package task21;
 
 import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -59,7 +57,6 @@ public class Multiframe {
 		        WebElement rightFrame = driver.findElement(By.cssSelector("frame[name='frame-right']"));
 		        driver.switchTo().frame(rightFrame);
 
-		        // Verify that the right frame has a text "RIGHT"
 		        String rightFrameText = driver.findElement(By.tagName("body")).getText();
 		        if (rightFrameText.contains("RIGHT")) {
 		            System.out.println("Text 'RIGHT' found in the right frame.");
