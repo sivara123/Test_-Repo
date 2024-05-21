@@ -26,7 +26,7 @@ public class JDBC {
 		
 			String insert_values = "insert into empdata values " + "(101,'Jenny',25,10000),"+"(102,'Jacky',30,20000),"+ "(103,'Joe  ',20,40000)," 
 			
-				                	+ "(103,'Joe  ',20,40000)," +"(104,'John ',40,80000)," +"(105,'Shameer',25,90000)";                            
+				                	+ "(103,'Joe',20,40000)," +"(104,'John ',40,80000)," +"(105,'Shameer',25,90000)";                            
 					                                               
 					                                              
 			statement.execute(create_database);
@@ -41,10 +41,7 @@ public class JDBC {
 		    	 System.out.println(rs.getInt("Empcode")+ "  " + rs.getString("EmpName")+"    "+ rs.getInt("Emppage")+"     "+rs.getInt("Empsalary"));
 
 			}
-		     connection.close();
-
-
-					
+		     connection.close();	
 		
 	}
 
